@@ -9,6 +9,27 @@ import java.util.List;
 
 @RestController
 public class MyController {
+    @RequestMapping("/test8")
+    public  String test8(){
+        System.out.println("執行 test8 方法");
+        return  "Hello test8";
+    }
+    @RequestMapping("/test7")
+    public  String test7(){
+        System.out.println("執行 test7 方法");
+        return  "Hello test7";
+    }
+
+    @RequestMapping("/test6")
+    public  String test6(){
+        throw new IllegalArgumentException("test6 error");
+    }
+
+    @RequestMapping("/test5")
+    public  String test5(){
+         throw new RuntimeException("test5 error");
+    }
+
     @RequestMapping("/test4/{userid}/{name}")
     public  String test4( @PathVariable  Integer userid, @PathVariable String name ){
         System.out.println("Path id:" + userid);
